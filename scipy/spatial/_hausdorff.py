@@ -30,12 +30,12 @@ def directed_hausdorff(ar1, ar2):
     cmax = 0
     for outer_point in ar1:
         cmin = np.inf
-        for inner_point in in ar2:
+        for inner_point in ar2:
             d = scipy.spatial.distance.euclidean(outer_point, inner_point)
             if d < cmax: # early break
                 break
-            elif d < cmin:
+            if d < cmin:
                 cmin = d
-        if cmin > cmax:
-            cmax = cmin
+            if cmin > cmax:
+                cmax = cmin
     return cmax
