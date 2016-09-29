@@ -32,8 +32,8 @@ def directed_hausdorff(np.ndarray[np.float64_t, ndim =2] ar1,
     cdef int N1 = ar1.shape[0]
     cdef int N2 = ar2.shape[0]
     cdef int data_dims = ar1.shape[1]
-    cdef double square_distance = 0
     cdef np.float64_t d
+    cdef unsigned int i, j, k
 
     # shuffling the points in each array generally increases the likelihood of
     # an advantageous break in the inner search loop and never decreases the
@@ -50,10 +50,7 @@ def directed_hausdorff(np.ndarray[np.float64_t, ndim =2] ar1,
 	    # faster performance with square of distance
 	    # avoid sqrt until very end
             for k in range(data_dims):
-                d += ((ar1[<unsigned int> i,<unsigned int> k] - 
-                       ar2[<unsigned int> j,<unsigned int> k]) * 
-                       (ar1[<unsigned int> i,<unsigned int> k] -
-                       ar2[<unsigned int> j,<unsigned int> k]))
+                d += (ar1[i, k] - ar2[j, k]) * (ar1[i, k] - ar2[j, k])
             if d < cmax: # early break
                 break_occurred += 1
                 break
