@@ -93,7 +93,7 @@ from .kdtree import *
 from .ckdtree import *
 from .qhull import *
 from ._spherical_voronoi import SphericalVoronoi
-from ._hausdorff import directed_hausdorff
+from .hausdorff import directed_hausdorff
 from ._plotutils import *
 from ._procrustes import procrustes
 
