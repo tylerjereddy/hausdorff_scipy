@@ -10,6 +10,8 @@ cimport numpy as np
 cimport cython
 from libc.math cimport sqrt
 
+__all__ = ['directed_hausdorff']
+
 @cython.boundscheck(False)
 def directed_hausdorff(np.ndarray[np.float64_t, ndim =2] ar1,
                        np.ndarray[np.float64_t, ndim =2] ar2):
