@@ -119,8 +119,6 @@ from . import _distance_wrap
 from . import _hausdorff
 from ..linalg import norm
 
-directed_hausdorff = _hausdorff.directed_hausdorff
-
 def _copy_array_if_base_present(a):
     """
     Copies the array if its base points to a parent array.
@@ -147,6 +145,22 @@ def _validate_vector(u, dtype=None):
         raise ValueError("Input vector should be 1-D.")
     return u
 
+def directed_hausdorff(u, v):
+    """
+    Calculates the directed Hausdorff distance between point sets.
+    
+    Notes
+    ----------
+    Uses the early break technique and the random sampling approach described
+    by Taha and Hanbury (2015) IEEE Transactions On Pattern Analysis And Machine
+    Intelligence 37. Although worst-case performance is polynomial (as with the
+    brute force algorithm), this is exceedingly unlikely in practice, and
+    almost-linear time complexity performance can normally be expected for the
+    average case.
+
+    """
+    dist = _hausdorff.directed_hausdorff(u,v)
+    return dist
 
 def minkowski(u, v, p):
     """
