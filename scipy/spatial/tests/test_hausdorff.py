@@ -2,7 +2,7 @@ import numpy as np
 from numpy.testing import (TestCase,
                            assert_almost_equal)
 import scipy
-from scipy.spatial import directed_hausdorff
+from scipy.spatial.distance import directed_hausdorff
 
 class TestHausdorff(TestCase):
     '''Test various properties of the directed Hausdorff code.'''
