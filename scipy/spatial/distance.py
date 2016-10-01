@@ -84,6 +84,7 @@ __all__ = [
     'correlation',
     'cosine',
     'dice',
+    'directed_hausdorff',
     'euclidean',
     'hamming',
     'is_valid_dm',
@@ -115,8 +116,10 @@ from scipy._lib.six import callable, string_types
 from scipy._lib.six import xrange
 
 from . import _distance_wrap
+from . import _hausdorff
 from ..linalg import norm
 
+directed_hausdorff = _hausdorff.directed_hausdorff
 
 def _copy_array_if_base_present(a):
     """
