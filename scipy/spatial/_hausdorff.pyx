@@ -4,6 +4,11 @@ Directed Hausdorff Code
 .. versionadded:: 0.19.0
 
 """
+#
+# Copyright (C)  Tyler Reddy and Richard Gowers, 2016
+#
+# Distributed under the same BSD license as Scipy.
+#
 
 import numpy as np
 cimport numpy as np
