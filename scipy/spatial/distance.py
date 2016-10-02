@@ -168,14 +168,15 @@ def directed_hausdorff(u, v):
     Notes
     ----------
     Uses the early break technique and the random sampling approach described
-    by [Taha and Hanbury]_. Although worst-case performance is polynomial (as with the
+    by [Taha2015]_. Although worst-case performance is polynomial (as with the
     brute force algorithm), this is exceedingly unlikely in practice, and
     almost-linear time complexity performance can normally be expected for the
     average case.
 
     References
     ----------
-    .. [Taha and Hanbury] Taha and Hanbury (2015) An efficient algorithm
+    
+    .. [Taha2015] Taha and Hanbury (2015) An efficient algorithm
                           for calculating the exact Hausdorff distance.
                           IEEE Transactions On Pattern Analysis And
                           Machine Intelligence 37: 2153-63. 
